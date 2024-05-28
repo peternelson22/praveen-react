@@ -38,7 +38,7 @@ const Sidebar = () => {
               <span>Sellers</span>
             </li>
           </Link>
-          <Link to='/category'>
+          <Link to='/category' style={{ textDecoration: 'none' }}>
             <li>
               <CreditCardIcon className='icon' />
               <span>Category</span>

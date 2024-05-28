@@ -10,6 +10,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { productInputs, userInputs } from './formSource';
 import { DarkModeContext } from './context/darkModeContext';
 import Sellers from './pages/sellers/Sellers';
+import Category from './pages/category/Category';
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
@@ -38,7 +39,7 @@ function App() {
               />
             </Route>
             <Route path='category'>
-              <Route index element={<List />} />
+              <Route index element={<Category />} />
             </Route>
           </Route>
         </Routes>
