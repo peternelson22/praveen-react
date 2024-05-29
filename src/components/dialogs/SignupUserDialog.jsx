@@ -50,10 +50,7 @@ const SignupUserDialog = ({ open, handleClose }) => {
 
   const handleFormSubmit = async (formData) => {
     try {
-      const result = await signup(
-        `https://sparkling-eagerness-production.up.railway.app/api/auth/user/signup`,
-        formData
-      );
+      const result = await signup(`/auth/user/signup`, formData);
       console.log('Signup successful:', result);
       handleClose();
     } catch (err) {

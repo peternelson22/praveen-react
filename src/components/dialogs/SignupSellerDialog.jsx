@@ -56,10 +56,7 @@ const SignupSellerDialog = ({ open, handleClose }) => {
 
   const handleFormSubmit = async (formData) => {
     try {
-      const result = await signup(
-        `https://sparkling-eagerness-production.up.railway.app/api/auth/seller/signup`,
-        formData
-      );
+      const result = await signup(`/auth/seller/signup`, formData);
       console.log('Signup successful:', result);
       handleClose();
     } catch (err) {

@@ -6,10 +6,24 @@ import StoreIcon from '@mui/icons-material/Store';
 import InsertChartIcon from '@mui/icons-material/InsertChart';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { CategorySharp, Person3Sharp } from '@mui/icons-material';
 
 const Sidebar = () => {
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    try {
+      const token = localStorage.getItem('token');
+      if (!token) {
+        return;
+      }
+      localStorage.removeItem('token');
+      return navigate('/login');
+    } catch (error) {
+      console.error('Logout failed', error);
+    }
+  };
   return (
     <div className='sidebar'>
       <div className='top'>
@@ -58,13 +72,13 @@ const Sidebar = () => {
             </li>
           </Link>
           <p className='title'>USER</p>
-          <li>
+          {/* <li>
             <AccountCircleOutlinedIcon className='icon' />
             <span>Profile</span>
-          </li>
+          </li> */}
           <li>
             <ExitToAppIcon className='icon' />
-            <span>Logout</span>
+            <span onClick={handleLogout}>Logout</span>
           </li>
         </ul>
       </div>

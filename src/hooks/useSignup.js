@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import axios from 'axios';
+import { axiosCustom } from '../axios/axiosAuth';
 
 const useSignup = () => {
   const [loading, setLoading] = useState(false);
@@ -9,7 +9,7 @@ const useSignup = () => {
     setLoading(true);
     setError(null);
     try {
-      const response = await axios.post(url, formData);
+      const response = await axiosCustom.post(url, formData);
       setLoading(false);
       return response.data;
     } catch (err) {

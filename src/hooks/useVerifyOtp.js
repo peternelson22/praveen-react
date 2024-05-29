@@ -1,6 +1,6 @@
-// /src/hooks/useVerifyOtp.js
 import { useState } from 'react';
 import axios from 'axios';
+import { axiosCustom } from '../axios/axiosAuth';
 
 const useVerifyOtp = () => {
   const [loading, setLoading] = useState(false);
@@ -10,8 +10,8 @@ const useVerifyOtp = () => {
     setLoading(true);
     setError(null);
     try {
-      const response = await axios.post(
-        'https://sparkling-eagerness-production.up.railway.app/api/auth/user/verify-mobile-otp',
+      const response = await axiosCustom.post(
+        '/user/verify-mobile-otp',
         formData
       );
       setLoading(false);

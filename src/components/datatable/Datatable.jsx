@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { Button, Typography } from '@mui/material';
 import VerifyOtpDialog from '../dialogs/VerifyOtpDialog';
-import axios from '../../utils/axiosConfig';
+import axios from '../../axios/axiosConfig';
 
 const Datatable = ({
   title,
@@ -22,12 +22,15 @@ const Datatable = ({
 
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true);
       try {
         const response = await axios.get(endpoint);
         setData(response.data);
         setLoading(false);
       } catch (err) {
         setError('Failed to fetch user data');
+        setLoading(false);
+      } finally {
         setLoading(false);
       }
     };
@@ -108,6 +111,7 @@ const Datatable = ({
         pageSize={9}
         rowsPerPageOptions={[9]}
         checkboxSelection
+        loading={loading}
       />
     </div>
   );

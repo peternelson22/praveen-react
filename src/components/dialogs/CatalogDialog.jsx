@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import Button from '@mui/material/Button';
 import ReusableForm from './ReusableForm';
+import { axiosCustom } from '../../axios/axiosAuth';
 
 const formInputs = [
   {
@@ -39,8 +39,8 @@ const CatalogDialog = ({ open, handleClose }) => {
     }
 
     try {
-      const response = await axios.post(
-        `https://sparkling-eagerness-production.up.railway.app/api/catalog?${params.toString()}`,
+      const response = await axiosCustom.post(
+        `/catalog?${params.toString()}`,
         formData
       );
       console.log('Catalog created successfully:', response.data);

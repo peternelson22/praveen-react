@@ -1,8 +1,8 @@
-// src/axiosConfig.js
+//https://sparkling-eagerness-production.up.railway.app
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: 'https://sparkling-eagerness-production.up.railway.app/api',
+  baseURL: 'http://localhost:8080/api',
 });
 
 instance.interceptors.request.use(

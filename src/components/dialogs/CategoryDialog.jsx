@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import axios from '../../utils/axiosConfig';
+import axios from '../../axios/axiosConfig';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import Button from '@mui/material/Button';
 import ReusableForm from '../form/ReusableForm';
+import { axiosCustom } from '../../axios/axiosAuth';
 
 const formInputs = [
   {
@@ -30,10 +31,7 @@ const CategoryDialog = ({ open, handleClose }) => {
     setLoading(true);
     setError(null);
     try {
-      const response = await axios.post(
-        'https://sparkling-eagerness-production.up.railway.app/api/category',
-        formData
-      );
+      const response = await axiosCustom.post('/category', formData);
       console.log('Category added successfully:', response.data);
       handleClose();
     } catch (err) {

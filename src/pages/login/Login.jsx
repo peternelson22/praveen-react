@@ -9,6 +9,7 @@ import {
   Grid,
   Paper,
 } from '@mui/material';
+import { axiosCustom } from '../../axios/axiosAuth';
 
 const Login = () => {
   const [mobileNumber, setMobileNumber] = useState('');
@@ -19,13 +20,10 @@ const Login = () => {
   const handleLogin = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post(
-        'https://sparkling-eagerness-production.up.railway.app/api/auth/user/signin',
-        {
-          mobilenumber: mobileNumber,
-          password: password,
-        }
-      );
+      const response = await axiosCustom.post('/auth/admin/signin', {
+        mobilenumber: mobileNumber,
+        password: password,
+      });
       localStorage.setItem('token', response.data.token);
       axios.defaults.headers.common[
         'Authorization'

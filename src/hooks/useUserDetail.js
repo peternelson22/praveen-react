@@ -1,6 +1,5 @@
-// /src/hooks/useSignup.js
 import { useState } from 'react';
-import axios from 'axios';
+import { axiosCustom } from '../axios/axiosAuth';
 
 const useUserDeatil = () => {
   const [loading, setLoading] = useState(false);
@@ -10,9 +9,7 @@ const useUserDeatil = () => {
     setLoading(true);
     setError(null);
     try {
-      const response = await axios.get(
-        `https://sparkling-eagerness-production.up.railway.app/api/user`
-      );
+      const response = await axiosCustom.get(`/user`);
       setLoading(false);
       return response.data;
     } catch (err) {
