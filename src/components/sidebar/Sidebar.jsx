@@ -7,6 +7,7 @@ import InsertChartIcon from '@mui/icons-material/InsertChart';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import { Link } from 'react-router-dom';
+import { CategorySharp, Person3Sharp } from '@mui/icons-material';
 
 const Sidebar = () => {
   return (
@@ -23,7 +24,13 @@ const Sidebar = () => {
           <Link to='/' style={{ textDecoration: 'none' }}>
             <li>
               <DashboardIcon className='icon' />
-              <span>Admin Dashboard</span>
+              <span>Dashboard</span>
+            </li>
+          </Link>
+          <Link to='/admin' style={{ textDecoration: 'none' }}>
+            <li>
+              <Person3Sharp className='icon' />
+              <span>Admin</span>
             </li>
           </Link>
           <Link to='/users' style={{ textDecoration: 'none' }}>
@@ -42,6 +49,12 @@ const Sidebar = () => {
             <li>
               <CreditCardIcon className='icon' />
               <span>Category</span>
+            </li>
+          </Link>
+          <Link to='/catalog' style={{ textDecoration: 'none' }}>
+            <li>
+              <CategorySharp className='icon' />
+              <span>Catalog</span>
             </li>
           </Link>
           <p className='title'>USER</p>
