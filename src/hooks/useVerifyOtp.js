@@ -11,7 +11,7 @@ const useVerifyOtp = () => {
     setError(null);
     try {
       const response = await axios.post(
-        'https://observant-mindfulness-production-02b0.up.railway.app/api/auth/user/verify-mobile-otp',
+        'https://sparkling-eagerness-production.up.railway.app/api/auth/user/verify-mobile-otp',
         formData
       );
       setLoading(false);

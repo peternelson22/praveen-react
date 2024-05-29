@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: 'https://observant-mindfulness-production-02b0.up.railway.app/api',
+  baseURL: 'https://sparkling-eagerness-production.up.railway.app/api',
 });
 
 instance.interceptors.request.use(

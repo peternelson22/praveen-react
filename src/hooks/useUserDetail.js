@@ -11,7 +11,7 @@ const useUserDeatil = () => {
     setError(null);
     try {
       const response = await axios.get(
-        `https://observant-mindfulness-production-02b0.up.railway.app/api/user`
+        `https://sparkling-eagerness-production.up.railway.app/api/user`
       );
       setLoading(false);
       return response.data;
