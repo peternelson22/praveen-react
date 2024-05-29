@@ -10,7 +10,9 @@ const useUserDeatil = () => {
     setLoading(true);
     setError(null);
     try {
-      const response = await axios.get(`http://localhost:8080/api/user`);
+      const response = await axios.get(
+        `https://observant-mindfulness-production-02b0.up.railway.app/api/user`
+      );
       setLoading(false);
       return response.data;
     } catch (err) {

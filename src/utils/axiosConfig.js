@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: 'http://localhost:8080/api',
+  baseURL: 'https://observant-mindfulness-production-02b0.up.railway.app/api',
 });
 
 instance.interceptors.request.use(

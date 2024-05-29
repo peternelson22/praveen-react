@@ -40,7 +40,7 @@ const CatalogDialog = ({ open, handleClose }) => {
 
     try {
       const response = await axios.post(
-        `http://localhost:8080/api/catalog?${params.toString()}`,
+        `https://observant-mindfulness-production-02b0.up.railway.app/api/catalog?${params.toString()}`,
         formData
       );
       console.log('Catalog created successfully:', response.data);

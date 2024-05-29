@@ -31,7 +31,7 @@ const CategoryDialog = ({ open, handleClose }) => {
     setError(null);
     try {
       const response = await axios.post(
-        'http://localhost:8080/api/category',
+        'https://observant-mindfulness-production-02b0.up.railway.app/api/category',
         formData
       );
       console.log('Category added successfully:', response.data);

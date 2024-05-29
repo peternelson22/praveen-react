@@ -6,59 +6,58 @@ import DialogActions from '@mui/material/DialogActions';
 import Button from '@mui/material/Button';
 import useSignup from '../../hooks/useSignup';
 import ReusableForm from '../form/ReusableForm';
+const formInputs = [
+  {
+    name: 'businessname',
+    label: 'Business Name',
+    placeholder: 'Enter your first name',
+    type: 'text',
+  },
+  {
+    name: 'managername',
+    label: 'Manager Name',
+    placeholder: 'Enter your first name',
+    type: 'text',
+  },
+  {
+    name: 'email',
+    label: 'Email',
+    placeholder: 'Enter your email',
+    type: 'email',
+  },
+  {
+    name: 'mobilenumber',
+    label: 'Mobile Number',
+    placeholder: 'Enter your phone number',
+    type: 'tel',
+  },
+  {
+    name: 'countrycode',
+    label: 'Country code',
+    placeholder: 'Enter your country code',
+    type: 'tel',
+  },
+  {
+    name: 'sellercategory',
+    label: 'Seller Category',
+    placeholder: 'Enter seller category',
+    type: 'text',
+  },
+  {
+    name: 'password',
+    label: 'Password',
+    placeholder: 'Enter your password',
+    type: 'password',
+  },
+];
 
 const SignupSellerDialog = ({ open, handleClose }) => {
   const { signup, loading, error } = useSignup();
 
-  const formInputs = [
-    {
-      name: 'businessname',
-      label: 'Business Name',
-      placeholder: 'Enter your first name',
-      type: 'text',
-    },
-    {
-      name: 'managername',
-      label: 'Manager Name',
-      placeholder: 'Enter your first name',
-      type: 'text',
-    },
-    {
-      name: 'email',
-      label: 'Email',
-      placeholder: 'Enter your email',
-      type: 'email',
-    },
-    {
-      name: 'mobilenumber',
-      label: 'Mobile Number',
-      placeholder: 'Enter your phone number',
-      type: 'tel',
-    },
-    {
-      name: 'countrycode',
-      label: 'Country code',
-      placeholder: 'Enter your country code',
-      type: 'tel',
-    },
-    {
-      name: 'sellercategory',
-      label: 'Seller Category',
-      placeholder: 'Enter seller category',
-      type: 'text',
-    },
-    {
-      name: 'password',
-      label: 'Password',
-      placeholder: 'Enter your password',
-      type: 'password',
-    },
-  ];
-
   const handleFormSubmit = async (formData) => {
     try {
       const result = await signup(
-        `http://localhost:8080/api/auth/seller/signup`,
+        `https://observant-mindfulness-production-02b0.up.railway.app/api/auth/seller/signup`,
         formData
       );
       console.log('Signup successful:', result);

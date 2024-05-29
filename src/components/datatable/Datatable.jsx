@@ -67,7 +67,7 @@ const Datatable = ({
               to={`/${title.toLowerCase()}/view`}
               style={{ textDecoration: 'none' }}
             >
-              <div className='viewButton'>View</div>
+              {/* <div className='viewButton'>View</div> */}
             </Link>
             <div
               className='deleteButton'

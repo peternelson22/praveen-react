@@ -51,7 +51,7 @@ const SignupUserDialog = ({ open, handleClose }) => {
   const handleFormSubmit = async (formData) => {
     try {
       const result = await signup(
-        `http://localhost:8080/api/auth/user/signup`,
+        `https://observant-mindfulness-production-02b0.up.railway.app/api/auth/user/signup`,
         formData
       );
       console.log('Signup successful:', result);

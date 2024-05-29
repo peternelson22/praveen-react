@@ -20,7 +20,7 @@ const Login = () => {
     event.preventDefault();
     try {
       const response = await axios.post(
-        'http://localhost:8080/api/auth/user/signin',
+        'https://observant-mindfulness-production-02b0.up.railway.app/api/auth/user/signin',
         {
           mobilenumber: mobileNumber,
           password: password,
